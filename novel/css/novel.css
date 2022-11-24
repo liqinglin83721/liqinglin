@@ -1,0 +1,157 @@
+* {
+	padding: 0;
+	margin: 0;
+	/* 移动端禁止选中文字 */
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	/* 只兼容webkit内核浏览器 */
+	user-select: none;
+}
+
+body {
+	color: #000;
+	background-color: #fbfbfb;
+}
+
+img {
+	width: 34px;
+	height: 34px;
+	/* 让整个div显示手型鼠标指向 */
+	cursor: pointer;
+	z-index: 99;
+}
+
+.graph {
+	/* 固定位置 */
+	position: fixed;
+	top: 50%;
+	right: 2%;
+}
+
+.graph img {
+	border-radius: 50%;
+	/* 旋转阴影 */
+	box-shadow: -2px 0px 8px #f00, 0px -2px 8px #000, 0px 2px 8px #9e038a, 2px 0px 8px #0f0;
+}
+
+/* 图片围绕中心点一直旋转 */
+.rotate {
+	-webkit-transform: rotate(360deg);
+	animation: rotation 4s linear infinite;
+	-moz-animation: rotation 4s linear infinite;
+	-webkit-animation: rotation 4s linear infinite;
+	-o-animation: rotation 4s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.button {
+	/* position: relative; */
+}
+
+.button .top {
+	/* 固定位置 */
+	position: fixed;
+	top: 80%;
+	right: 2%;
+}
+
+.novel {
+	margin-top: 10px;
+}
+
+.novel .title {
+	display: flex;
+	background-color: #84c8f2;
+	height: 45px;
+	line-height: 45px;
+}
+
+.novel .title>div {
+	flex: 1;
+}
+
+.novel .title .shop,
+.novel .title .evaluate {
+	/* 居中显示 */
+	margin-top: 5.5px;
+}
+
+.novel .title .shop {
+	margin-left: 10px;
+}
+
+.novel .title .name {
+	text-align: center;
+}
+
+.novel .title .name h1 {
+	font-size: 24px;
+}
+
+.novel .title .evaluate {
+	text-align: right;
+	margin-right: 10px;
+}
+
+.novel .read {
+	/* 增加空白 */
+	padding-bottom: 240px;
+}
+
+.novel .read .serial {
+	/* 定位 */
+	padding-top: 23px;
+	margin-bottom: 29px;
+}
+
+.novel .read .serial h1 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.novel .read .serial span {
+	/* 转换元素类型 */
+	display: inline-block;
+	width: 120px;
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 2px solid #000;
+	text-align: center;
+}
+
+.novel .read p {
+	font-size: 22px;
+	font-family: SimSun;
+	/* 首行缩入 */
+	text-indent: 2em;
+	/* 设置字体间距 */
+	letter-spacing: 0.1em;
+	/* 设置行高 */
+	line-height: 34px;
+	/* 设置边距 */
+	margin: 0 10px;
+	/* 两端对齐 */
+	text-align: justify !important;
+}
+
+.novel .statement {
+	display: none;
+}
+
+.novel .statement p {
+	color: red;
+	text-align: center;
+}

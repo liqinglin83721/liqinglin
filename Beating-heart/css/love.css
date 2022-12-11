@@ -1,0 +1,183 @@
+* {
+	margin: 0;
+	padding: 0;
+	/* 移动端禁止选中文字 */
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	/* 只兼容webkit内核浏览器 */
+	user-select: none;
+}
+
+html,
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: snow;
+	/* 解决移动端页面点击图标或按钮产生阴影 */
+	-webkit-tap-highlight-color: transparent;
+	/* 页面变灰 */
+	/* filter: grayscale(100%); */
+}
+
+.graph {
+	/* 固定位置 */
+	position: fixed;
+	top: 50%;
+	right: 4%;
+}
+
+.graph img {
+	width: 34px;
+	height: 34px;
+	/* 让整个div显示手型鼠标指向 */
+	cursor: pointer;
+	z-index: 99;
+	border-radius: 50%;
+	/* 旋转阴影 */
+	box-shadow: -2px 0px 8px #f00, 0px -2px 8px #000, 0px 2px 8px #9e038a, 2px 0px 8px #0f0;
+}
+
+/* 图片围绕中心点一直旋转 */
+.rotate {
+	-webkit-transform: rotate(360deg);
+	animation: rotation 4s linear infinite;
+	-moz-animation: rotation 4s linear infinite;
+	-webkit-animation: rotation 4s linear infinite;
+	-o-animation: rotation 4s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* 50%为自身尺寸的一半 */
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+.image img {
+	width: 150px;
+	height: 150px;
+}
+
+canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	animation: anim 1.5s ease-in-out infinite;
+	-webkit-animation: anim 1.5s ease-in-out infinite;
+	-o-animation: anim 1.5s ease-in-out infinite;
+	-moz-animation: anim 1.5s ease-in-out infinite;
+}
+
+.wanttosay {
+	width: 100%;
+	position: absolute;
+	top: 78%;
+	color: red;
+	font-size: 34px;
+	text-align: center;
+}
+
+@keyframes anim {
+	0% {
+		transform: scale(0.8);
+	}
+
+	25% {
+		transform: scale(0.7);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	75% {
+		transform: scale(0.7);
+	}
+
+	100% {
+		transform: scale(0.8);
+	}
+}
+
+@-webkit-keyframes anim {
+	0% {
+		-webkit-transform: scale(0.8);
+	}
+
+	25% {
+		-webkit-transform: scale(0.7);
+	}
+
+	50% {
+		-webkit-transform: scale(1);
+	}
+
+	75% {
+		-webkit-transform: scale(0.7);
+	}
+
+	100% {
+		-webkit-transform: scale(0.8);
+	}
+}
+
+@-o-keyframes anim {
+	0% {
+		-o-transform: scale(0.8);
+	}
+
+	25% {
+		-o-transform: scale(0.7);
+	}
+
+	50% {
+		-o-transform: scale(1);
+	}
+
+	75% {
+		-o-transform: scale(0.7);
+	}
+
+	100% {
+		-o-transform: scale(0.8);
+	}
+}
+
+@-moz-keyframes anim {
+	0% {
+		-moz-transform: scale(0.8);
+	}
+
+	25% {
+		-moz-transform: scale(0.7);
+	}
+
+	50% {
+		-moz-transform: scale(1);
+	}
+
+	75% {
+		-moz-transform: scale(0.7);
+	}
+
+	100% {
+		-moz-transform: scale(0.8);
+	}
+}
